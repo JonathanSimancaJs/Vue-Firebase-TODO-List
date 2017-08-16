@@ -26,9 +26,6 @@
         components:{
             Todo
         },
-        methods:{
-
-        }
     }
 </script>
 

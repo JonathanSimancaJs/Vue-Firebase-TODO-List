@@ -11,18 +11,34 @@
                         <span class="icon">
                             <i class="fa fa-undo" aria-hidden="true" @click="incompleteTodo(todo)"></i>
                         </span>
-                    </a>
+                    </a>                 
                 </header>
                 <!-- end of complete flag -->
                 <!-- Card that shows when isEditing is false -->
+                <header>
+                    
+                </header>
                 <div class="card-content">
                     <p class="title">
                         {{todo.title}}
+                    <span class="icon" v-show="!todo.done" v-if="todo.importance == 1">
+                    <i class="fa fa-exclamation important" aria-hidden="true"></i>
+                    </span>
+                    <span class="icon" v-show="!todo.done" v-if="todo.importance == 2">
+                    <i class="fa fa-exclamation important" aria-hidden="true"></i>
+                    <i class="fa fa-exclamation important" aria-hidden="true"></i>
+                    </span>
+                    <span class="icon" v-show="!todo.done" v-if="todo.importance == 3">
+                    <i class="fa fa-exclamation important" aria-hidden="true"></i>
+                    <i class="fa fa-exclamation important" aria-hidden="true"></i>
+                    <i class="fa fa-exclamation important" aria-hidden="true"></i>
+                    </span>                           
                     </p>    
                     <p class="subtitle">
                         {{todo.description}}
-                    </p>
-                    <p class="subtitle" type="calendar" v-show="!todo.done">
+                    </p>                                       
+                    <p v-show="!todo.done" v-if="todo.date.length > 0">Due date:</p>
+                    <p class="subtitle" type="calendar" >
                         {{todo.date}}   
                     </p>
                 </div>
@@ -113,3 +129,10 @@
         }
     };
 </script>
+
+<style>
+    .important{
+    font-size: 28px !important;
+    color:red !important;
+}
+</style>

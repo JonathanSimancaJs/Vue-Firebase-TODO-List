@@ -8,6 +8,7 @@
             A Minimalistic Vue.js Project
           </h2>
       </div>
+      <hr>
     </section>
 </template>
 
